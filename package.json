@@ -12,7 +12,6 @@
 		"build": "gulp build",
 		"devbuild": "gulp devbuild",
 		"fonts": "gulp fonts"
-
 	},
 	"devDependencies": {
 		"copy-webpack-plugin": "latest",

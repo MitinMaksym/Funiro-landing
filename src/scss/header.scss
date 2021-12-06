@@ -1,80 +1,132 @@
 //====================================================================================================
 .header {
+	position:absolute;
+	width: 100;
+	left:0;
+	top:0;
 }
+
 .header__wrapper {
+	position:fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
 }
-.header__container {
-}
+
+.header__container {}
+
 .header__body {
+	display: flex;
+	align-items: center;
+	padding: 5px 0;
+	min-height: 125px;
 }
+
 .header__main {
+	display: flex;
+	align-items: center;
+	flex: 0 0 494 / 1240 * 100%;
 }
+
 .header__logo {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29 / 24 * 100%;
+    color: #000000;
 }
-.header__menu {
-}
+
+.header__menu {}
+
 .menu {
+	flex: 0 1 420px;
 }
-.menu__body {
-}
+
+.menu__body {}
+
 .menu__list {
+	@media (min-width:$mobile){
+		 display: flex;
+		 flex-wrap: wrap;
+		 justify-content: space-evenly; 
+	}
 }
+
 .menu__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0px 3px;
+	padding: 5px 0px;
+	position: relative;
 }
+
 .menu__link {
+	color: inherit;
+	font-weight: 500;
+	line-height: 150%;
+	transition: color 0.3s ease 0s;
 }
+
 .menu__arrow {
+	margin: 0px 0px 0px 8px;
+	transition: all 0.3s ease 0s;
+	font-size: 8px;
 }
-._icon-arrow-down {
-}
+
+._icon-arrow-down {}
+
 .menu__sub-list {
+	background-color: $orangeColor;
 }
-.menu__sub-item {
-}
-.menu__sub-link {
-}
-.header__search {
-}
-.search-form {
-}
-.search-form__icon {
-}
-._icon-search {
-}
-.search-form__item {
-}
-.search-form__btn {
-}
-.search-form__input {
-}
-.header__actions {
-}
-.actions-header {
-}
-.actions-header__item {
-}
-.actions-header__item_favorites {
-}
-._icon-favorite {
-}
-.cart-header {
-}
-.cart-header__icon {
-}
-._icon-cart {
-}
-.cart-header__body {
-}
-.cart-header__list {
-}
-.cart-list {
-}
-.actions-header__item_user {
-}
-._ibg {
-}
-.icon-menu {
-}
+
+.menu__sub-item {}
+
+.menu__sub-link {}
+
+.header__search {}
+
+.search-form {}
+
+.search-form__icon {}
+
+._icon-search {}
+
+.search-form__item {}
+
+.search-form__btn {}
+
+.search-form__input {}
+
+.header__actions {}
+
+.actions-header {}
+
+.actions-header__item {}
+
+.actions-header__item_favorites {}
+
+._icon-favorite {}
+
+.cart-header {}
+
+.cart-header__icon {}
+
+._icon-cart {}
+
+.cart-header__body {}
+
+.cart-header__list {}
+
+.cart-list {}
+
+.actions-header__item_user {}
+
+._ibg {}
+
+.icon-menu {}
+
 //====================================================================================================
 
 //Burger
