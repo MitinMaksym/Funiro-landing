@@ -51,6 +51,7 @@ $dardColor: #616161;
 @import "base/null";
 
 body {
+  background-color: #f9f1e7;
   color: $mainColor;
   // Скролл заблокирован
   .lock & {

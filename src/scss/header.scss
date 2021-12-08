@@ -1,250 +1,356 @@
 //====================================================================================================
 .header {
-    position: absolute;
-    width: 100%;
-    left: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+  // .header__wrapper
+  &__wrapper {
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+  }
 
-    // .header__wrapper
-    &__wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 50;
+  // .header__container
+  &__container {
+  }
+
+  // .header__body
+  &__body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    min-height: 125px;
+
+    @media (max-width: $tablet) {
+      min-height: 80px;
     }
 
-    // .header__container
-    &__container {}
-
-    // .header__body
-    &__body {
-        display: flex;
-        align-items: center;
-        padding: 5px 0;
-        min-height: 125px;
+    @media (max-width: $mobile) {
+      min-height: 50px;
     }
+  }
 
-    // .header__main
-    &__main {
-        display: flex;
-        align-items: center;
-        flex: 0 0 494 / 1240 * 100%;
+  // .header__main
+  &__main {
+    display: flex;
+    align-items: center;
+    flex: 0 0 494 / 1240 * 100%;
+
+    @media (max-width: $tablet) {
+      flex: 1 1 auto;
     }
+  }
 
-    // .header__logo
-    &__logo {
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 29 / 24 * 100%;
-        color: #000000;
+  // .header__logo
+  &__logo {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29 / 24 * 100%;
+    color: #000000;
+  }
+
+  // .header__menu
+  &__menu {
+  }
+
+  // .header__search
+  &__search {
+    @include adaptiveValue("padding-right", 32, 15, 1);
+    @media (min-width: $tablet) {
+      flex: 1 1 auto;
     }
+  }
 
-    // .header__menu
-    &__menu {}
-
-    // .header__search
-    &__search {
-		@media (min-width:$mobile){
-			 flex: 1 1 auto; 
-		}
-	}
-
-    // .header__actions
-    &__actions {}
+  // .header__actions
+  &__actions {
+  }
 }
 
 .menu {
-    flex: 0 1 420px;
+  flex: 0 1 420px;
 
-    // .menu__body
-    &__body {}
+  // .menu__body
+  &__body {
+  }
 
-    // .menu__list
+  // .menu__list
 
-    &__list {
-        @media (min-width: $mobile) {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
+  &__list {
+    @media (min-width: $mobile) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
     }
+  }
 
-    // .menu__item
-    &__item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        margin: 0px 3px;
-        padding: 5px 0px;
-        position: relative;
+  // .menu__item
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px 3px;
+    padding: 5px 0px;
+    position: relative;
 
-        @media (any-hover: hover) {
-
-            // styles for this media request will apply only if there is a cursor
-            &:hover {
-                .menu__sub-list {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translate(0px, 0px);
-                    pointer-events: auto;
-
-                }
-
-                .menu__arrow {
-                    transform: rotate(-180deg);
-                }
-
-                .menu__arrow,
-                .menu__link {
-                    color: $orangeColor
-                }
-
-
-            }
+    @media (any-hover: hover) {
+      // styles for this media request will apply only if there is a cursor
+      &:hover {
+        .menu__sub-list {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(0px, 0px);
+          pointer-events: auto;
         }
 
-        @media (min-width:$mobile) {
-            &._hover {
-                .menu__sub-list {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translate(0px, 0px);
-                    pointer-events: auto;
-
-                }
-
-                .menu__arrow {
-                    transform: rotate(-180deg);
-                }
-
-                .menu__arrow,
-                .menu__link {
-                    color: $orangeColor
-                }
-            }
-
+        .menu__arrow {
+          transform: rotate(-180deg);
         }
-    }
 
-    // .menu__link
-    &__link {
-        color: inherit;
-        font-weight: 500;
-        line-height: 150%;
-        transition: color 0.3s ease 0s;
-    }
-
-    // .menu__arrow
-    &__arrow {
-        margin: 0px 0px 0px 8px;
-        transition: all 0.3s ease 0s;
-        font-size: 8px;
-    }
-
-    // .menu__sub-list
-    &__sub-list {
-        position: relative;
-        background-color: $orangeColor;
-        padding: 15px;
-        flex: 1 1 100%;
-
-        @media (min-width: $mobile) {
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease 0s;
-            transform: translate(0px, 10px);
-            min-width: 200px;
-            left: 0;
-            position: absolute;
-            top: 100%;
-            pointer-events: none;
+        .menu__arrow,
+        .menu__link {
+          color: $orangeColor;
         }
+      }
     }
 
-    // .menu__sub-item
-    &__sub-item {
-        &:not(:last-child) {
-            margin: 0px 0px 5px 0px;
+    @media (min-width: $mobile) {
+      &._hover {
+        .menu__sub-list {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(0px, 0px);
+          pointer-events: auto;
         }
-    }
 
-    // .menu__sub-link
-    &__sub-link {
-        color: #fff;
-        line-height: 120%;
+        .menu__arrow {
+          transform: rotate(-180deg);
+        }
+
+        .menu__arrow,
+        .menu__link {
+          color: $orangeColor;
+        }
+      }
     }
+  }
+
+  // .menu__link
+  &__link {
+    color: inherit;
+    font-weight: 500;
+    line-height: 150%;
+    transition: color 0.3s ease 0s;
+  }
+
+  // .menu__arrow
+  &__arrow {
+    margin: 0px 0px 0px 8px;
+    transition: all 0.3s ease 0s;
+    font-size: 8px;
+  }
+
+  // .menu__sub-list
+  &__sub-list {
+    position: relative;
+    background-color: $orangeColor;
+    padding: 15px;
+    flex: 1 1 100%;
+
+    @media (min-width: $mobile) {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease 0s;
+      transform: translate(0px, 10px);
+      min-width: 200px;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      pointer-events: none;
+    }
+  }
+
+  // .menu__sub-item
+  &__sub-item {
+    &:not(:last-child) {
+      margin: 0px 0px 5px 0px;
+    }
+  }
+
+  // .menu__sub-link
+  &__sub-link {
+    color: #fff;
+    line-height: 120%;
+  }
 }
 
 // ._icon-arrow-down
-._icon-arrow-down {}
+._icon-arrow-down {
+}
 
 // ._icon-search
-._icon-search {}
+._icon-search {
+}
 
 // ._icon-favorite
-._icon-favorite {}
+._icon-favorite {
+}
 
 // ._icon-cart
-._icon-cart {}
+._icon-cart {
+}
 
 // ._ibg
-._ibg {}
+._ibg {
+}
 
 .search-form {
-	max-width: 473px;
+  max-width: 473px;
 
-    // .search-form__icon
-    &__icon {}
+  &._active {
+    .search-form__item {
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
 
-    // .search-form__item
-    &__item {
-		display: flex;
-		background-color: #fff;
-		align-items: center;
-	}
+    .search-form__icon {
+      color: $orangeColor;
+    }
+  }
 
-    // .search-form__btn
-    &__btn {
-		flex: 0 0 45px;
-		height: 45px;
-		color: #333333;
-		font-size: 15px;;
-	}
+  // .search-form__icon
+  &__icon {
+    position: relative;
+    z-index: 5;
+    color: #262f56;
+    font-size: 22px;
 
-    // .search-form__input
-    &__input {}
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  // .search-form__item
+  &__item {
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+
+    @media (max-width: $tablet) {
+      box-shadow: 0 0 5px rgba(212, 209, 205, 0.3);
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: -100%;
+      z-index: 5;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  // .search-form__btn
+  &__btn {
+    flex: 0 0 45px;
+    height: 45px;
+    color: #333333;
+    font-size: 15px;
+  }
+
+  // .search-form__input
+  &__input {
+    font-size: 14px;
+    color: $grayColor;
+    width: 100%;
+    padding: 0px 20px 0px 0px;
+  }
 }
 
 .actions-header {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  align-items: center;
+  @include adaptiveValue("gap", 32, 15, 1);
 
-    // .actions-header__item
-    &__item {
+  // .actions-header__item
+  &__item {
+    // .actions-header__item_favorites
+    &_favorites {
+      color: #262f56;
+      font-size: 24px;
+      transition: color 0.3s ease 0s;
 
-        // .actions-header__item_favorites
-        &_favorites {}
-
-        // .actions-header__item_user
-        &_user {}
+      @media (any-hover: hover) {
+        &:hover {
+          color: $orangeColor;
+        }
+      }
     }
+
+    // .actions-header__item_user
+    &_user {
+      overflow: hidden;
+      border-radius: 50%;
+      @include adaptiveValue("width", 40, 30, 1);
+      @include adaptiveValue("height", 40, 30, 1);
+    }
+  }
 }
 
 .cart-header {
+  // .cart-header__icon
+  &__icon {
+    color: #262f56;
+    font-size: 24px;
+    transition: color 0.3s ease 0s;
+    position: relative;
+    display: block;
 
-    // .cart-header__icon
-    &__icon {}
+    @media (any-hover: hover) {
+      &:hover {
+        color: $orangeColor;
+      }
+    }
 
-    // .cart-header__body
-    &__body {}
+    span {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      top: -10px;
+      right: -10px;
+      border-radius: 50%;
+      color: #fff;
+      background-color: $orangeColor;
+    }
+  }
 
-    // .cart-header__list
-    &__list {}
+  // .cart-header__body
+  &__body {
+  }
+
+  // .cart-header__list
+  &__list {
+  }
 }
 
-.cart-list {}
+.cart-list {
+}
 
-.icon-menu {}
+.icon-menu {
+}
 
 //====================================================================================================
 
