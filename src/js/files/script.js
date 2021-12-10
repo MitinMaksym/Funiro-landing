@@ -1,5 +1,5 @@
 // Импорт функционала ==============================================================================================================================================================================================================================================================================================================================
-import { isMobile, removeClasses } from "./functions.js";
+import { isMobile, menuOpen, removeClasses } from "./functions.js";
 
 window.onload = function () {
   document.addEventListener("click", documentActions);
@@ -7,6 +7,7 @@ window.onload = function () {
   function documentActions(e) {
     const targetEl = e.target;
     const searchInput = document.querySelector(".search-form");
+    
 
     if (window.innerWidth > 768 && isMobile.any()) {
       if (targetEl.classList.contains("menu__arrow")) {
@@ -27,4 +28,14 @@ window.onload = function () {
       }
     }
   }
+
+  // BURGER MENU
+    if (window.innerWidth < 768 && isMobile.any()) {
+        const menuBurger = document.querySelector(".icon-menu")
+        const menu = document.querySelector('.menu__body')
+
+        menuBurger.addEventListener('click',() => {
+            menu.classList.toggle("_active")
+        })
+    } 
 };
